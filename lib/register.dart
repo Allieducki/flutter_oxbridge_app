@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'http_service.dart';
-import 'user_model.dart';
 
 class RegisterPage extends StatelessWidget {
   final HttpService httpService = HttpService();

@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class Event {
   final int eventId;
   final String name;
@@ -12,8 +10,8 @@ class Event {
 
   Event({
     this.eventId,
-    @required this.name,
-    @required this.eventStart,
+    this.name,
+    this.eventStart,
     this.eventEnd,
     this.city,
     this.eventCode,
