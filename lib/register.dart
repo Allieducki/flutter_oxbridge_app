@@ -12,6 +12,10 @@ class RegisterPage extends StatelessWidget {
     title: Text("Registration error!"),
     content: Text("you didn't fill out all the fields"),
   );
+  final AlertDialog success = AlertDialog(
+    title: Text("Account registered!"),
+    content: Text("your account has now been registered"),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +33,9 @@ class RegisterPage extends StatelessWidget {
               child: TextField(
                 controller: _firstnamecontroller,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter first name here',
-                ),
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter first name here',
+                    prefixIcon: Icon(Icons.login)),
               ),
             ),
             Padding(
@@ -39,9 +43,9 @@ class RegisterPage extends StatelessWidget {
               child: TextFormField(
                 controller: _lastnamecontroller,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter last name here',
-                ),
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter last name here',
+                    prefixIcon: Icon(Icons.login)),
               ),
             ),
             Padding(
@@ -49,9 +53,9 @@ class RegisterPage extends StatelessWidget {
               child: TextField(
                 controller: _emailUsernamecontroller,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Enter email here',
-                ),
+                    border: OutlineInputBorder(),
+                    hintText: 'Enter email here',
+                    prefixIcon: Icon(Icons.email)),
               ),
             ),
             Padding(
@@ -59,9 +63,10 @@ class RegisterPage extends StatelessWidget {
               child: TextFormField(
                 controller: _passwordcontroller,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Enter password here',
-                ),
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter password here',
+                    prefixIcon: Icon(Icons.lock)),
+                obscureText: true,
               ),
             ),
             ElevatedButton(
@@ -76,6 +81,11 @@ class RegisterPage extends StatelessWidget {
                       _lastnamecontroller.text,
                       _emailUsernamecontroller.text,
                       _passwordcontroller.text);
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return success;
+                      });
                 } else {
                   showDialog(
                       context: context,

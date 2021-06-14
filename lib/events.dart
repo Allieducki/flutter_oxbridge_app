@@ -34,7 +34,8 @@ class EventsPage extends StatelessWidget {
                     (Event event) => ListTile(
                       title: Text(event.name),
                       tileColor: Colors.lightBlue.shade50,
-                      subtitle: Text(event.eventStart.toString())
+                      subtitle: Text(event.eventStart.toString()), 
+                      
                     ),
                   )
                   .toList(),
