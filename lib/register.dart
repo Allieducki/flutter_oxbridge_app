@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'http_service.dart';
 
 class RegisterPage extends StatelessWidget {
+  // Local variables
   final HttpService httpService = HttpService();
   final TextEditingController _firstnamecontroller = TextEditingController();
   final TextEditingController _lastnamecontroller = TextEditingController();
@@ -23,11 +24,13 @@ class RegisterPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Register User"),
       ),
+      
       body: Container(
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // TextFields added in a widget
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
@@ -69,8 +72,10 @@ class RegisterPage extends StatelessWidget {
                 obscureText: true,
               ),
             ),
+            // Button that when pressed will call the postRequest function and create an account with the data 
+            // from the textfields if none of them are empty
             ElevatedButton(
-              child: Text('Create Data'),
+              child: Text('Create Account'),
               onPressed: () {
                 if (_firstnamecontroller.text != "" &&
                     _lastnamecontroller.text != "" &&

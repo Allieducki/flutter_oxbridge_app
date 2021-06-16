@@ -5,6 +5,7 @@ import 'events.dart';
 void main() {
   runApp(MyApp());
   }
+  // Starts up when running, and opens the Eventpage OnStart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

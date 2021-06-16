@@ -23,6 +23,7 @@ class EventsPage extends StatelessWidget {
     ),
   ),
       ),
+      // Calls the getEvent function to get the events, and then maps them into the right locations, with a title and a subtitle
       body: FutureBuilder(
         future: httpService.getEvents(),
         builder: (BuildContext context, AsyncSnapshot<List<Event>> snapshot) {
